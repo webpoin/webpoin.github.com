@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+html {color: #000;background: #FFF;height: 100%;}
+body {background-color: #efeef4;font-family: '微软雅黑';font-size: 12px;color: #333;margin: 0;padding: 0;height: 100%;}
+cite,em{font-style: normal;}
+.top {height: 45px;background-color: #f18032;font-size: 18px;color: #fff;position: relative;line-height: 45px;}
+.top .goback {position: absolute;left: 25px;top: 0;color: #fff;font-family: serif;text-align: center;width: 25px;cursor: pointer;}
+.top .goback:before{content: '◆';position: absolute;left: 0;top: 0;color: #fff;}
+.top .goback:after{content: '◆';position: absolute;left: 3px;top: 0;color: #F18032;}
+.top h1 {font-size: 16px;font-weight: normal;margin: 0;width: 100%;text-align: center;}
+
+
+.formSubmit {border: 0;background-color: #f18032;color: #fff;text-align: center;width: 80%;margin: 0 auto;margin-top: 35px;height: 40px;line-height: 40px;display: block;border-radius: 3px;}
+.share{background: #fff;}
+.share p {line-height: 20px;}
+.share h2 {font-size: 18px;margin: 10px;}
+
+
+
+.title{text-align: center;background: #f28033;color: #fff;height: 50%;white-space: nowrap;}
+.title2{background: #fff;}
+.title:before{content: '';width: 0;height: 100%;display: inline-block;vertical-align: middle;}
+.title cite{display: inline-block;white-space: normal;vertical-align: middle;}
+.share_box{position: absolute;top: 45px;left: 0;right: 0;bottom: 0;overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.share_box .share{height: 100%;}
+.share_btn{position: absolute;z-index: 1;bottom: 20px;left: 50%;margin-left: -13px;width: 26px;height: 16px;}
+.share_btn img{width: 26px;}
+.wechat_download{display: none; position: fixed;left: 0;top: 0;width: 100%;}
+.wechat_download img{width: 100%;}
+
+.fire {position: relative;}
+.rocket {position: absolute;left: 50%;width: 50px;bottom: 50px;padding-bottom: 20px; margin-left: -25px;text-align: center;height: 70px;}
+.rocket img{width: 100%;}
+.fire span { position: absolute;width: 50px;height: 50px;left: 50%;bottom: -16px;margin-left: -25px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.fire span.fire1{-webkit-animation: .1s rainbow infinite;}
+.fire span.fire2{-webkit-animation: .2s rainbow infinite;}
+.fire span.fire3{-webkit-animation: .3s rainbow infinite;}
+.rocket {
+  -webkit-animation: .1s snake infinite;  
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+.share_turn {position: relative;overflow: hidden;}
+.share_turn h2{color: #f28033;text-align: center;padding: 20px 0;}
+.share_turn h6{position: absolute;left: 20px;right: 20px;bottom: 40px;text-align: center;color:#888;font-size: 12px;line-height: 16px;font-weight: normal;}
+.share_turn h6 em{color: #f28033;}
+.share_turn>span{position: absolute;left: 50%;top: 45%;margin-left: -100px;margin-top: -100px; width: 140px;height: 140px;border:2px dashed #f28033;border-radius: 110px;padding: 30px;}
+.share_turn>span img{width: 100%;}
+.share_turn cite,
+.share_turn cite span,
+.share_turn cite i,
+.share_turn cite img{  
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.share_turn cite{position: absolute;top: 45%;left: 50%;width: 200px;height: 200px;margin-left: -100px;margin-top: -100px;z-index: 1;}
+.share_turn cite span{position: absolute;width: 100%;height: 100%;left: 0;top: 0;}
+.share_turn cite img{width: 100%;height: 100%;}
+.share_turn cite i{position: absolute;width: 50px;height: 50px;top: 0;left: 0;}
+.share_turn cite span.share_turn1{-webkit-transform:rotate(0deg);}
+.share_turn cite span.share_turn1 i{-webkit-transform:rotate(-0deg);}
+.share_turn cite span.share_turn2{-webkit-transform:rotate(72deg);}
+.share_turn cite span.share_turn2 i{-webkit-transform:rotate(-72deg);}
+.share_turn cite span.share_turn3{-webkit-transform:rotate(144deg);}
+.share_turn cite span.share_turn3 i{-webkit-transform:rotate(-144deg);}
+.share_turn cite span.share_turn4{-webkit-transform:rotate(216deg);}
+.share_turn cite span.share_turn4 i{-webkit-transform:rotate(-216deg);}
+.share_turn cite span.share_turn5{-webkit-transform:rotate(288deg);}
+.share_turn cite span.share_turn5 i{-webkit-transform:rotate(-288deg);}
+
+
+.share_turn cite{-webkit-animation: 10s trun infinite linear;}
+.share_turn cite img{-webkit-animation: 10s trunall infinite linear;}
+
+@-webkit-keyframes rainbow{from {opacity: 1; } to {opacity: 0; }}
+@-webkit-keyframes snake{from {margin-bottom: 2px; } to {margin-bottom: 0px; }}
+@-webkit-keyframes trun{from {-webkit-transform:rotate(0deg) } to {-webkit-transform:rotate(360deg)}}
+@-webkit-keyframes trunall{from {-webkit-transform:rotate(0deg) } to {-webkit-transform:rotate(-360deg)}}
+

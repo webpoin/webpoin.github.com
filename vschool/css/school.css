@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.school { position: absolute;left: 0;top: 40px;right: 0;bottom: 0;overflow: hidden; }
+.school ul{position: absolute;width: 100%;height: 100%;top: 50%;left: 50%;margin-left: 140px;margin-top: -230px; letter-spacing:-0.5em;font-size: 12px;white-space: nowrap;}
+
+.school li{ display: inline-block; width: 260px; height: 395px;margin: 0 10px;  background: #fff; letter-spacing:0; box-shadow: 0 0 1px rgba(0,0,0,0.3);border-radius: 8px;}
+.school h3{font-size: 16px;line-height: 30px;margin: 0;padding: 8px 10px 0;}
+.school h6{margin: 0; font-size: 12px;color: #c5c5c5;font-weight: normal;padding: 0 10px 6px;}
+.school h6 img{height: 18px;vertical-align: middle;margin-left: -1px;}
+.school em{display: block;width: 100%;}
+.school em img{width: 100%;height: 160px;}
+.school p{height: 120px;font-size: 14px;line-height: 22px;padding: 10px;white-space: nowrap;}
+.school p:before{content: '';width: 1px;height: 100%; display: inline-block;vertical-align: middle;}
+.school p span{display: inline-block;vertical-align: middle;white-space: normal;}
+.school h4{line-height: 30px;font-size: 14px;color: #555; border-top: 1px solid #ddd;text-align: right;padding: 0 10px;}
+
+.school_tab{position: absolute;left: 0;bottom: 0;white-space: nowrap;letter-spacing:-0.5em;}
+.school_tab span{display: inline-block;vertical-align: top; position: relative; width: 38px;height: 70px;border-radius: 5px; bottom: -80px; padding: 10px 0;letter-spacing:0; box-shadow: 0 0 1px rgba(0,0,0,0.3); margin:0 3px;font-size: 12px;color: #888;font-weight: normal;  background: #fff;line-height: 22px; text-align: center;
+	-webkit-transition: all 0.3s cubic-bezier(0.3, 0, 0.7, 1.75);
+}
+.school_tab span b{display: block;color: #fd6847;font-size: 20px;}
+.school_tab span.on{bottom: -34px;}
+
+
+.school_all{padding-top: 45px;}
+
+.school_all li{ margin: 15px 15px;  background: #fff; letter-spacing:0; box-shadow: 0 0 1px rgba(0,0,0,0.3);border-radius: 8px;}
+.school_all h3{font-size: 16px;line-height: 30px;margin: 0;padding: 8px 10px 0;}
+.school_all h6{margin: 0; font-size: 12px;color: #666;font-weight: normal;padding: 0 10px 6px;}
+.school_all h6 img{height: 18px;vertical-align: middle;margin-left: -1px;}
+.school_all em{display: block;width: 100%;}
+.school_all em img{width: 100%;height: 160px;}
+.school_all p{height: 120px;font-size: 14px;line-height: 22px;padding: 10px;white-space: nowrap;}
+.school_all p:before{content: '';width: 1px;height: 100%; display: inline-block;vertical-align: middle;}
+.school_all p span{display: inline-block;vertical-align: middle;white-space: normal;}
+.school_all h4{position: relative; line-height: 40px;font-size: 14px;color: #33; border-top: 1px solid #ddd;padding: 0 10px;}
+.school_all h4:before {content: "";position: absolute;display: block;top: 12px;right: 10px;width: 8px;height: 8px;border: solid 3px #000;border-width: 2px 0 0 2px;margin-left: 3px;margin-top: 1px;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);transform: rotate(135deg);}
