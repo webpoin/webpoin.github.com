@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="backstage.css">
+</head>
+<body>
+	
+
+	<!--[if IE]><script type="text/javascript" src="/js/excanvas.compiled.js"></script><![endif]-->
+	
+	<div class="main cs">
+		
+		<h2 class="tle">
+			<i class="icon icon-lianmeng"></i>蜂巢系统
+			<small>用户、代理商户分润系统，你可以享受你的代理商业绩分成</small>
+		</h2>
+		<br>
+
+	
+	
+
+		<div class="canvas">
+			<canvas id="bkg" width="770" height="720"></canvas>
+			<canvas id="ctx" width="770" height="720"></canvas>
+			<canvas id="loc" width="770" height="720"></canvas>
+			<canvas id="hot" width="770" height="720"></canvas>
+			<div id="update"></div>
+			<div id="hover"></div>
+			<div id="picbox"></div>
+			<div class="money">
+				<span>分润总额(当月)：</span><div id="money"></div>元<br>
+				<span>可用金额(全部)：</span><div id="moneyall"></div>元
+			</div>
+			<div id="updmsg"></div>
+
+			<div id="hotmsg"></div>
+		</div>
+		
+
+
+		<div class="canvas_msg">
+			<table>
+				<caption><i class="icon icon-lianmeng"></i>云蜂巢分润系统(本月记录)<!--  <a href="#">更多>></a> --></caption>
+				<tbody>
+					<tr><td>一级蜂窝</td><td id="level_son">6人(<font color="#08c">满额</font>)</td><td>分润比例：5%</td><td><a href="#">查看</a></td></tr>
+					<tr><td>二级蜂窝</td><td id="level_git">84人</td><td>分润比例：1%</td><td><a href="#">查看</a></td></tr>
+					<tr><td>三级蜂窝</td><td id="level_oth">236人</td><td>分润比例：0.6%</td><td><a href="#">查看</a></td></tr>
+					<tr><td>消费总额</td><td colspan="2">20153661.12元</td><td><a href="#">查看</a></td></tr>
+					<tr><td>利润分成</td><td colspan="2" style="color:#f00;font-size:20px;	">1536.46元</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		
+	</div>
+
+<!-- 页脚 -->
+
+	<script >
+
+		// 数据
+		var date = [];
+		var self = {};
+		var lastmonth,prevmonth,thirmonth;
+		var update_link = '/getMerchantsHiveDataRealTime.shtml';
+		var host = '';
+		// <c:if test="${!empty list}">date = ${list};</c:if>
+		// <c:if test="${!empty merchantsResult}">self = ${merchantsResult};</c:if>
+		// <c:if test="${!empty final_list}">
+		// 	var month = ${final_list};
+		// 	lastmonth = month[0];
+		// 	prevmonth = month[1];
+		// 	thirmonth = month[2];
+		// </c:if>
+
+
+
+
+		// 本自商户数据
+		// var self = {id:0,mid:0,storename:'本身名称',logo:'test.gif',money:120551.51,month:134153}
+		
+	// <%--
+
+		// 最近三个月数据
+		// 本月
+		var lastmonth = {name:'三月份',subname:'2015.03.01--2015.03.31',data:[1,2,2,3,4,5,6,9,7,8,5,7]}
+		// 上个月
+		var prevmonth = {name:'四月份',subname:'2015.03.01--2015.03.31',data:[1,2,2,3,4,5,6,9,7,8,5,7,2,8,5,8,4,8]}
+		// 上上个朋
+		var thirmonth = {name:'本月份',subname:'2015.03.01--2015.03.31',data:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]}
+		
+
+
+		// 实时入账数据
+		var update = [{id:0,mid:0,storename:'商户名',logo:'test.gif',record:120551.51,proportion:0.05,rating:'一级'}];
+		
+		
+		
+
+		var self = {id:1,mid:0,storename:'自身',logo:'test.gif'};
+		var date = [
+			{id:2,mid:1,storename:'子级1',logo:'test.gif'},
+			{id:3,mid:1,storename:'子级2',logo:'test.gif'},
+			{id:4,mid:1,storename:'子级3',logo:'test.gif'},
+			{id:5,mid:1,storename:'子级4',logo:'test.gif'},
+			{id:6,mid:1,storename:'子级5',logo:'test.gif'},
+			{id:7,mid:1,storename:'子级6',logo:'test.gif'},
+
+			{id:8,mid:2,storename:'孙级2',logo:'test.gif'},
+			{id:9,mid:2,storename:'孙级2',logo:'test.gif'},
+			{id:10,mid:2,storename:'孙级2',logo:'test.gif'},
+			{id:11,mid:2,storename:'孙级2',logo:'test.gif'},
+			{id:12,mid:2,storename:'孙级2',logo:'test.gif'},
+			{id:13,mid:2,storename:'孙级2',logo:'test.gif'},
+
+			{id:14,mid:3,storename:'孙级2',logo:'test.gif'},
+			{id:15,mid:3,storename:'孙级2',logo:'test.gif'},
+			{id:16,mid:3,storename:'孙级2',logo:'test.gif'},
+			{id:17,mid:3,storename:'孙级2',logo:'test.gif'},
+			{id:18,mid:3,storename:'孙级2',logo:'test.gif'},
+			{id:19,mid:3,storename:'孙级2',logo:'test.gif'},
+
+			{id:20,mid:4,storename:'孙级3',logo:'test.gif'},
+			{id:21,mid:4,storename:'孙级3',logo:'test.gif'},
+			{id:22,mid:4,storename:'孙级3',logo:'test.gif'},
+			{id:23,mid:4,storename:'孙级3',logo:'test.gif'},
+			{id:24,mid:4,storename:'孙级3',logo:'test.gif'},
+			{id:25,mid:4,storename:'孙级3',logo:'test.gif'},
+
+			{id:26,mid:5,storename:'孙级4',logo:'test.gif'},
+			{id:27,mid:5,storename:'孙级4',logo:'test.gif'},
+			{id:28,mid:5,storename:'孙级4',logo:'test.gif'},
+			{id:29,mid:5,storename:'孙级4',logo:'test.gif'},
+			{id:30,mid:5,storename:'孙级4',logo:'test.gif'},
+			{id:31,mid:5,storename:'孙级4',logo:'test.gif'},
+
+			{id:32,mid:6,storename:'孙级6',logo:'test.gif'},
+			{id:33,mid:6,storename:'孙级6',logo:'test.gif'},
+			{id:34,mid:6,storename:'孙级6',logo:'test.gif'},
+			{id:35,mid:6,storename:'孙级6',logo:'test.gif'},
+			{id:36,mid:6,storename:'孙级6',logo:'test.gif'},
+			{id:37,mid:6,storename:'孙级6',logo:'test.gif'},
+
+			{id:38,mid:7,storename:'孙级6',logo:'test.gif'},
+			{id:39,mid:7,storename:'孙级6',logo:'test.gif'},
+			{id:40,mid:7,storename:'孙级6',logo:'test.gif'},
+			{id:41,mid:7,storename:'孙级6',logo:'test.gif'},
+			{id:42,mid:7,storename:'孙级6',logo:'test.gif'},
+			{id:43,mid:7,storename:'孙级6',logo:'test.gif'},
+
+			{id:44,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:45,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:46,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:47,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:48,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:49,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:50,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:51,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:52,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:53,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:54,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:55,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:56,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:57,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:58,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:59,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:60,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:61,mid:8,storename:'玄孙5',logo:'test.gif'},
+			{id:62,mid:8,storename:'玄孙5',logo:'test.gif'},
+
+			{id:63,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:64,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:65,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:66,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:67,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:68,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:69,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:70,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:71,mid:14,storename:'玄孙5',logo:'test.gif'},
+			{id:72,mid:14,storename:'玄孙5',logo:'test.gif'},
+
+			{id:73,mid:20,storename:'玄孙5',logo:'test.gif'},
+			{id:74,mid:20,storename:'玄孙5',logo:'test.gif'},
+			{id:75,mid:20,storename:'玄孙5',logo:'test.gif'},
+
+			{id:76,mid:26,storename:'玄孙5',logo:'test.gif'},
+			{id:77,mid:26,storename:'玄孙5',logo:'test.gif'},
+			{id:78,mid:26,storename:'玄孙5',logo:'test.gif'},
+			{id:79,mid:26,storename:'玄孙5',logo:'test.gif'},
+			{id:80,mid:26,storename:'玄孙5',logo:'test.gif'},
+			{id:81,mid:26,storename:'玄孙5',logo:'test.gif'},
+			{id:82,mid:26,storename:'玄孙5',logo:'test.gif'},
+			{id:83,mid:26,storename:'玄孙5',logo:'test.gif'},
+
+			{id:84,mid:32,storename:'玄孙5',logo:'test.gif'},
+			{id:85,mid:32,storename:'玄孙5',logo:'test.gif'},
+			{id:86,mid:32,storename:'玄孙5',logo:'test.gif'},
+			{id:87,mid:32,storename:'玄孙5',logo:'test.gif'},
+			{id:88,mid:32,storename:'玄孙5',logo:'test.gif'},
+
+			{id:89,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:90,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:91,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:92,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:93,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:94,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:95,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:96,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:97,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:98,mid:38,storename:'玄孙5',logo:'test.gif'},
+			{id:99,mid:38,storename:'玄孙5',logo:'test.gif'}
+		];
+
+
+
+// --%>
+
+		var option = {
+			title : {text: '云蜂巢分润记录(最近三月)'},
+			grid:{x:10,y:30,x2:10,y2:30},
+			tooltip : {trigger: 'axis'},
+			legend: {data:[lastmonth.name,'二月份','三月份']},
+			toolbox: {show : true,
+			    feature : {
+			        dataView : {show: true, readOnly: false},
+			        magicType : {show: true, type: ['line','bar','stack','tiled']},
+			        restore : {show: true},
+			        saveAsImage : {show: true}
+			    }
+			},
+			calculable : true,
+			xAxis : [{type : 'category',boundaryGap : false,data : (function(){ for( var i=1,res=[];res.push(i++)<31;);return res;})()}],
+			yAxis : [{type : 'value',show:false}],
+			series : [
+			    {
+			        name:lastmonth.name,
+			        type:'line',
+			        smooth:true,
+			        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+			        data:lastmonth.data
+			    },
+			    {
+			        name:prevmonth.name,
+			        type:'line',
+			        smooth:true,
+			        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+			        data:prevmonth.data
+			    },
+			    {
+			       	name:thirmonth.name,
+			        type:'line',
+			        smooth:true,
+			        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+			        data:thirmonth.data
+			    }
+			]
+		};
+
+
+
+
+
+		// echarts.init(document.getElementById('main')).setOption(option);
+
+		
+	</script>
+	<script src="global.js"></script>
+	<script src="hive.js"></script>
+
+<body>
+</html>

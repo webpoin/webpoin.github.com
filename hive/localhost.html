@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://localhost:9000/#/ -->
+<html class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"> 
+    <meta content="yes" name="apple-touch-fullscreen"> 
+    <meta name="data-spm" content="a215s"> 
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="fullscreen=yes,preventMove=no" name="ML-Config">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;" name="viewport">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title></title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="http://localhost:9000/styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="app" class="ng-scope">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <header ng-controller="header" class="ng-scope">
+      <a href="javascript:history.go(-1)" class="goback"></a>
+      <h1 class="ng-binding">找老师</h1>
+      <!-- <h1>筛选</h1> -->
+      <!-- <h1>个人中心</h1> -->
+    </header>
+
+    <!-- ngView:  --><div ng-view="" class="ng-scope">    <form class="search ng-valid ng-scope ng-dirty ng-valid-parse" ng-controller="search" ng-submit="submit()" style="">
+      <label>
+        <b><i class="icon icon-find"></i></b>
+        <input type="text" placehoder="请输入关键字搜索" ng-model="data.key" class="ng-valid ng-dirty ng-valid-parse ng-touched" style="">
+        <button type="submit"><i class="icon icon-search"></i></button>
+      </label>
+    </form>
+    <dl class="prompt ng-scope">
+      <dt ng-show="lately" class="ng-hide" style="">最近搜索<a ng-click="cleanUp()" class="">清除</a></dt>
+      <dd ng-show="lately" class="ng-hide" style="">
+        <!-- ngRepeat: item in late --><a ng-repeat="item in late" href="http://localhost:9000/search.json?key=sfsefef" class="ng-binding ng-scope">sfsefef</a><!-- end ngRepeat: item in late --><a ng-repeat="item in late" href="http://localhost:9000/search.json?key=sfsefe" class="ng-binding ng-scope">sfsefe</a><!-- end ngRepeat: item in late -->
+      </dd>
+      <dt>热门搜索 <a ng-click="updateHot()" ng-show="replace" class="ng-hide" style="">换一批</a></dt>
+      <dd>
+        <!-- ngRepeat: item in hot --><a ng-repeat="item in hot" href="http://localhost:9000/search.json?key=demo9" class="ng-binding ng-scope">demo9</a><!-- end ngRepeat: item in hot --><a ng-repeat="item in hot" href="http://localhost:9000/search.json?key=%E7%83%AD%E9%97%A8%E6%90%9C%E7%B4%A2%E5%AD%97%E6%AE%B5%E4%B8%8D%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D" class="ng-binding ng-scope">热门搜索字段不允许重复</a><!-- end ngRepeat: item in hot -->
+      </dd>
+    </dl>
+
+   </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="./localhost_files/angular.js"></script>
+    <script src="./localhost_files/angular-animate.js"></script>
+    <script src="./localhost_files/angular-cookies.js"></script>
+    <script src="./localhost_files/angular-resource.js"></script>
+    <script src="./localhost_files/angular-route.js"></script>
+    <script src="./localhost_files/angular-sanitize.js"></script>
+    <script src="./localhost_files/angular-touch.js"></script>
+    <script src="./localhost_files/angular-local-storage.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="./localhost_files/app.js"></script>
+        <script src="./localhost_files/header.js"></script>
+        <script src="./localhost_files/search.js"></script>
+        <script src="./localhost_files/main.js"></script>
+        <script src="./localhost_files/list.js"></script>
+        <script src="./localhost_files/filter.js"></script>
+        <!-- endbuild -->
+
+<script>//<![CDATA[
+document.write('<script src="//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1"><\/script>')
+//]]></script><script src="./localhost_files/livereload.js"></script>
+
+
+</body><div></div></html>
