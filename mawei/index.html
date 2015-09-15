@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>覃含玉的简历</title>
+<style>
+
+	@import url(iconfont/iconfont.css);
+	/*font-icon*/
+	i.icon{display: inline-block;vertical-align: top; font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+
+	html{*border:none;;overflow-y:scroll; overflow-x:auto;height: 100%;width: 100%;position: relative;background: #fafafa;}
+	body{margin:0 auto;font:normal 0.8em/1.5 "微软雅黑", Arial,Tahoma,Helvetica,sans-serif;color:#333;width: 1000px;background: #fff;border-left: 1px solid #ddd;border-right: 1px solid #ddd;}
+	h1,h2,h3,h4,h5,h6,ol,ul,p,form,dl{margin-top:0;margin-bottom:0}
+	img{border:none;vertical-align:top;}
+	ol,ul,dd{padding-left:0;margin-left:0; }
+	ul{list-style-type:none;}
+	em,cite{font-style: normal;}
+	a{text-decoration:none;white-space:nowrap;color: inherit;}
+
+	.title{width: 180px;height: 45px;line-height: 45px;text-align: center; font-size: 20px;font-weight: normal;background: #fc4977;color: #fff;}
+	.title span{height: 28px;display: inline-block;position: relative;}
+	.title i{font-size: 28px;line-height: 43px;vertical-align: top;}
+
+
+	.banner{position: relative; padding: 25px 80px;overflow: hidden;border-bottom: 1px solid #f0f0f0;padding-right: 0;}
+	.banner img{position: absolute;left: 0;bottom: 0px; }
+	.banner h1{position: relative; font-size: 24px;color: #222;margin-left: 300px;}
+	.banner h2{position: relative;margin-bottom: 20px;font-size: 16px;color: #5e5e5e;margin-left: 300px;}
+	.banner p{position: relative;line-height: 24px;font-size: 14px;color: #7c7c7c;margin-left: 300px;}
+	.banner p i{display: inline-block;vertical-align: top;font-size: 12px;margin-right: 5px;line-height: 24px;}
+	.banner h6{position: relative;font-weight: normal;font-size: 14px; color: #999;margin-top: 30px;margin-left: -10px;margin-left: 287px;}
+	.banner h6 i {color: #40bffb;margin-right: 3px;margin-left: 10px;}
+
+
+	/*软件*/
+	.soft{background: #f6f6f6;padding: 0px 0 50px;text-align: center;}
+	.soft h6{font-size: 13px;line-height: 24px;color: #7c7c7c;margin: 30px 50px;font-weight: normal;text-align: left;text-indent: 2em;}
+	.soft li{display: inline-block;position: relative;text-align: center;margin: 0 20px;}
+	.soft li>i{position: absolute;left: 0;top: 0;font-style: normal; width: 100%; height: 100px;line-height: 100px;font-size: 20px;}
+	.soft li span {display: block;position: relative; font-size: 100px;width: 1em;height: 1em;border-radius: 50%;box-shadow: inset 0 0 0 .1em #eaeaea;}
+	.soft li span b {position: absolute;left: 0;top: 0; width: 1em;height: 1em;}
+	.soft li span b:before {position: absolute;left: 0;top: 0; clip: rect(0, 1em, 1em, .5em);width: 1em;height: 1em;content: '';transform: rotate(0deg);border-radius: 50%;box-shadow: inset 0 0 0 .1em #3aa8ed;}
+	.soft li span b.r2{display: block; clip: rect(0, .5em, 1em, 0);}
+	.soft li span b.r2:before{transform: rotate(120deg);}
+	.soft p{line-height: 40px;font-size: 18px;color: #7c7c7c;}
+
+	.soft li.Photoshop b:before{box-shadow: inset 0 0 0 .1em #3bc9fa; }
+	.soft li.Photoshop b.r2:before{transform:rotate(144deg);}
+	.soft li.Illustrator b:before{box-shadow: inset 0 0 0 .1em #ff7b0f; }
+	.soft li.Illustrator b.r2:before{transform:rotate(108deg);}
+	.soft li.Coreldraw b:before{box-shadow: inset 0 0 0 .1em #fede07; }
+	.soft li.Coreldraw b.r2:before{transform:rotate(54deg);}
+	.soft li.Dreamweaver b:before{box-shadow: inset 0 0 0 .1em #a6c218; }
+	.soft li.Dreamweaver b.r2:before{transform:rotate(36deg);}
+	.soft li.Flash b:before{box-shadow: inset 0 0 0 .1em #c995fb; }
+	.soft li.Flash b.r2:before{transform:rotate(0deg);}
+
+
+
+
+	/*工作经验*/
+	.experience{float: left;width: 629px;border-right: 1px solid #f5f5f5; position: relative;padding-bottom: 20px;padding-right: 20px;}
+	.experience h2{background: #fbc440;}
+	.experience:before{content: '';position: absolute;left: 70px; top: 58px;bottom: 0px;width: 0;border-left: 1px solid #fbc440;}
+	.experience_top{position: absolute;left: 70px;top: 45px;width: 14px;text-align: center;margin-left: -6px;color: #fbc440;}
+	.experience:after{content: '';}
+	.experience h2{margin-bottom: 20px;}
+	.experience dl{margin-left: 90px;padding: 20px 0;}
+	.experience dt{position: relative;font-weight: bold;font-size: 14px;margin-bottom: 5px;}
+	.experience dt:before{content: '';position: absolute;width: 5px;height: 5px;background: #fff;border:2px solid #fbc440;border-radius: 6px;left: -24px;top: 3px;}
+	.experience dt span{position: absolute;left: 0;margin-left: -80px;font-size: 12px;font-weight: normal;width: 50px;text-align: center;background: #ccc;color: #fff;}
+	.experience dd {color: #555;}
+	.experience dd span{display: inline-block;margin-right: 30px;font-size: 12px;color: #999;}
+	.experience dd p{margin-top: 5px;}
+
+	/*教育*/
+	.education{width: 330px;border:none;}
+	.education h2{background: #40bffb;}
+	.education:before{border-color: #40bffb;}
+	.education .experience_top{color: #40bffb;}
+	.education dt:before{border-color: #40bffb; }
+	.education dd span{margin-right: 10px;}
+
+	/*个人信息*/
+	.info{float: left;width: 330px;}
+	.info p{padding: 15px 20px;line-height: 22px;}
+	.info p span{color: #7c7c7c;}
+	.info p i{margin-right: 5px}
+
+
+	/*项目*/
+	.project{clear: both;background: #f5f5f5;padding-bottom: 1px;}
+	.project h2{background: #fb893d;}
+	.project section{background: #fff;margin: 29px;border:1px solid #eeecec;padding: 15px;}
+	.project h3{font-size: 12px;line-height: 22px;padding-bottom: 8px;font-weight: normal;color: #7c7c7c; border-bottom:1px solid #fb893d;margin-bottom: 15px;}
+	.project h3 span{color: #aaa;}
+	.project h3 strong{font-size: 14px;color: #222;}
+	.project h3 small{display: inline-block;vertical-align: top;font-size: 12px;}
+	.project a{color: #0FBFFF;text-decoration: underline;}
+	.project img{Å}
+	.project h6{margin:30px;font-weight: normal;}
+	.project h6 strong{color: #ee2323;}
+
+
+
+	.footer{line-height: 22px;padding: 18px 0;text-align: center;color: #fff;background: #2378CA;}
+	.footer i{margin-right: 3px;}
+	.footer span{color: #AED3F7;}
+
+
+</style>
+</head>
+<body>
+
+	<div class="banner">
+		<img src="me_pic.png" alt="">
+		<h1>马威的简历</h1>
+		<h2>求职意向：UI设计师</h2>
+		<p><i>♦</i>爱设计，爱生活，感受设计，感受生活。</p>
+		<p><i>♦</i>熟练掌握phonshop，illustrator，Axure等设计工具。</p>
+		<p><i>♦</i>一年半设计经验，有中型电商系统整套设计方案，可胜任大部分pc端，移动端等ui开发。</p>
+		<p><i>♦</i>适合敏捷开发，擅长快速高效输出设计方案。</p>
+		
+		<h6>
+			<i class="icon icon-gongzuodongtai"></i>经验：1年半
+			<i class="icon icon-boshi"></i>学历：本科
+			<i class="icon icon-shouji"></i>电话：15889358230 
+			<i class="icon icon-youxiang"></i>邮箱：maweiyyx@163.com
+
+
+		</h6>
+	</div>
+
+	
+	<div class="soft">
+		<h2 class="title"><span> <i class="icon icon-shezhi"></i> 专业技能软件 </span></h2>
+		<h6>致力于界面的设计，交互设计及客户体验。熟练掌握手机App及Pc端的设计流程及规范，对视觉设计、图标设计有良好的创新意识与想法。善于研究学习，精通PS、AI等软件。</h6>
+		<ul>
+			<li class="Photoshop">
+				<span><b></b><b class="r2"></b></span>
+				<i>90%</i>
+				<p>Photoshop</p>
+			</li>
+			<li class="Illustrator">
+				<span><b></b><b class="r2"></b></span>
+				<i>80%</i>
+				<p>Illustrator</p>
+			</li>
+			<li class="Axure">
+				<span><b></b><b class="r2"></b></span>
+				<i>60%</i>
+				<p>Axure</p>
+			</li>
+		</ul>	
+
+	</div>
+	
+
+
+	<div class="experience">
+		<h2 class="title"><span><i class="icon icon-gongzuodongtai"></i> 工作经历</span></h2>
+		<i class="icon icon-iconrilijiantoulanse experience_top"></i>
+		<dl>
+			<dt><span>2015/8</span>深圳安子便民支付科技有限公司 (150-500人、民营公司)</dt>
+			<dd>
+				<span>行业：互联网/电子商务</span>
+				<span>部门：技术部</span>
+				<span>职位：UI设计师/设计顾问</span>
+				<p>
+					1、根据产品需求，对产品的整体美术风格、交互设计、界面结构、操作流程等做出设计； <br>
+					2、负责项目中各种交互界面、图标、LOGO、按钮等相关元素的设计与制作； <br>
+					3、负责软件界面的美术设计、创意工作和制作工作； <br>
+					4、协助前端工程师、IOS开发工程师、安卓开发工程师完成切片； 
+				</p>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span>2014/4</span>兰州万利资源开发设计所 （150-500人、民营公司）</dt>
+			<dd>
+				<span>行业：非金属矿山规划设计</span>
+				<span>部门：设计部</span>
+				<span>职位：设计师</span>
+				<p>
+					负责各类金属矿山的建筑、机械等一切因素的布局，综合环境以及安全因素<br>
+					，完成矿山生活和办公的整体设计。<br>
+				</p>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span>2013/6</span>湖南农业大学</dt>
+			
+		</dl>
+	</div>
+
+	<div class="experience education">
+		<h2 class="title"><span><i class="icon icon-boshi"></i> 教育经历</span></h2>
+		<i class="icon icon-iconrilijiantoulanse experience_top"></i>
+		<dl>
+			<dt><span>2013/6</span>湖南农业大学</dt>
+			<dd>
+				<span>专业：人力资源管理</span>
+		</dl>
+		<dl>
+			<dt><span>2009/6</span>南鄂高中</dt>
+			
+		</dl>
+		
+	</div>
+	<div class="info">
+		<h2 class="title"><span><i class="icon icon-icon20"></i> 基本信息</span></h2>
+		<p>
+			<span><i class="icon icon-nv"></i>性别：</span>南 <br>
+			<span><i class="icon icon-rili"></i>生日：</span>1990年02月15日 <br>
+			<span><i class="icon icon-boshi"></i>学历：</span>本科 <br>
+			<span><i class="icon icon-gongzuodongtai"></i>经验：</span>1年半 <br>
+			<span><i class="icon icon-aixin"></i>婚姻：</span>未婚 <br>
+			<span><i class="icon icon-dizhi"></i>住址：</span>深圳市宝安区水口花园 <br>
+			<span><i class="icon icon-shouji"></i>电话：</span>15889358230 <br>
+			<span><i class="icon icon-youxiang"></i>邮箱：</span>maweiyyx@163.com
+
+
+		</p>
+		
+	</div>
+	<div class="project">
+		<h2 class="title"><span><i class="icon icon-zhanshi"></i> 项目展示</span></h2>
+		
+		<section>
+			<h3>
+				<span>项目名称：</span><strong>APP</strong><br>
+				<span>项目介绍：</span>一些手机APP的设计<br>
+				<span>工作内容：</span>
+				<small>
+					1. 理解项目目的、项目功能、目标人群等，确定app整体UI风格，并提供多套设计稿。<br>
+					2. 根据原型要求进行UI设计，对原型稿缺陷补充。 <br>
+					3. app的logo设计。<br>
+					4. 配合开发人员提供设计稿切片、图标制作 <br>
+				</small>
+			</h3>
+			<img src="me_pic1.png" alt="">
+			<img src="me_pic2.png" alt="">
+			<img src="me_pic3.png" alt="">
+			<img src="me_pic4.png" alt="">
+			<img src="me_pic5.png" alt="">
+		</section>
+
+		<section>
+			<h3>
+				<span>项目名称：</span><strong>WEB页面</strong><br>
+				<span>项目介绍：</span>在线使用积分兑换商品、管理积分等电商积分平台<br>
+				<span>工作内容：</span>
+				<small>
+					1. 理解项目目的、项目功能、目标人群等，确定web页面整体UI风格。<br>
+					2. 根据原型要求进行UI设计(原型不完整，按自身理解进行补充设计)。 <br>
+					3. web的logo设计。<br>
+					4. 配合开发人员提供设计稿切片、图标制作，实现多端应用 <br>
+				</small>
+			</h3>
+			<img src="me_pic6.png" alt="">
+			<img src="me_pic7.png" alt="">
+			<img src="me_pic8.png" alt="">
+			<img src="me_pic9.png" alt="">
+		</section>
+
+		
+
+		
+
+		
+
+
+
+		<h6><strong>注：</strong> 因项目变动和开发人员实现等问题，部分成品与设计稿之间会有较大差异，请以设计稿为参考依据。更多作品，请访问 <a href="http://maweix663.zcool.com.cn">http://maweix663.zcool.com.cn</a></h6>
+
+
+	</div>
+	
+	<div class="footer">
+		为了让您 了解的更多，所以简历略长，感谢您下拉阅读！<br>
+		<span>
+			联系方式：
+			<i class="icon icon-shouji"></i>15889358230 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			<i class="icon icon-youxiang"></i>maweiyyx@163.com
+		</span>
+	</div>
+
+
+	
+</body>
+</html>
