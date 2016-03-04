@@ -13,13 +13,37 @@
 	<title>Document</title>
 	<style type="text/css">
 
-		html{height: 100%;}
+		html{height: 100%;overflow: hidden;}
 		body{height: 100%;background: #ddd;margin: 0;position: relative;overflow: hidden;}
 
 
-		.screenshot{position: absolute;top: 50px;left: 50px;width: 200px; height: 200px;border:1px solid #000;}
+		.screenshot{position: absolute;top: 50px;left: 50px;width: 200px; height: 200px;border:1px solid #000;
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			-ms-perspective: 1000;
+			perspective: 1000;
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
 		.screenshot_pic{position: absolute;left: 0;top: 0;width: 100%;height: 100%;overflow: hidden;}
-		.screenshot img{position: absolute;left: 0;top: 0;}
+		.screenshot img{position: absolute;left: 0;top: 0;
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			-ms-perspective: 1000;
+			perspective: 1000;
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
 		.screenshot_resize{position: absolute;background: #f00;width: 20px;height: 20px;right: -10px;bottom: -10px;z-index: 1;}
 		/*左上角*/
 		.screenshot_resize[position=lt]{left: -10px;top: -10px;}
@@ -80,13 +104,19 @@
 			var pictureMove = function(event){
 				if(!event.touches[0]){return;}
 				var offset = event.touches[0];
-				picture.style.left = picture.left + offset.clientX - picture.screenX + 'px';
-				picture.style.top = picture.top + offset.clientY - picture.screenY + 'px';
+
+				var x = picture.left + offset.clientX - picture.screenX;
+				var y = picture.top + offset.clientY - picture.screenY;
+				picture.style.transform = 'translate3d('+x+'px,'+y+'px,0)';
+				picture.position = [x,y];
+
 			}
 
 			// 图片停止移动
 			var pictureStop = function(event){
 				pictureMove(event);
+				picture.left = picture.position[0];
+				picture.top = picture.position[1];
 				window.removeEventListener('touchmove', pictureMove, false);
 				window.removeEventListener('touchend', pictureStop, false);
 			}
@@ -97,8 +127,9 @@
 				if(!event.touches[0]){return;}
 				this.screenX = event.touches[0].clientX;
 				this.screenY = event.touches[0].clientY;
-				this.left = parseFloat(this.offsetLeft || 0);
-				this.top = parseFloat(this.offsetTop || 0);
+				this.left = this.left || 0
+				this.top = this.top || 0;
+
 				picture = this;
 				window.addEventListener('touchmove', pictureMove, false);	
 				window.addEventListener('touchend', pictureStop, false);	
@@ -109,28 +140,56 @@
 			var boxMove = function(event){
 				if(!event.touches[0]){return;}
 				var offset = event.touches[0];
+				var width = 0,height = 0,x1=0,y1=0,x2=0,y2=0;
+
 
 				if(position.indexOf('l')<0){
-					dom.style.width = dom.width + offset.clientX - dom.screenX + 'px';
+					width = dom.width + offset.clientX - dom.screenX;
+					x1 = dom.left;
+					x2 = picture.left;
 				}else{
-					dom.style.width = dom.width + dom.screenX - offset.clientX + 'px';
-					dom.style.left = dom.left + offset.clientX - dom.screenX + 'px';
-					picture.style.left = picture.left + dom.screenX - offset.clientX + 'px';
+					width = dom.width + dom.screenX - offset.clientX;
+					x1 = dom.left + offset.clientX - dom.screenX;
+					x2 = picture.left + dom.screenX - offset.clientX;
 				}
 
 				if(position.indexOf('t')<0){
-					dom.style.height = dom.height + offset.clientY - dom.screenY + 'px';
+					height = dom.height + offset.clientY - dom.screenY;
+					y1 = dom.top;
+					y2 = picture.top
 				}else{
-					dom.style.height = dom.height + dom.screenY - offset.clientY + 'px';
-					dom.style.top = dom.top + offset.clientY - dom.screenY + 'px';
-					picture.style.top = picture.top + dom.screenY - offset.clientY + 'px';
+					height = dom.height + dom.screenY - offset.clientY;
+
+					y1 = dom.top + offset.clientY - dom.screenY;
+					y2 = picture.top + dom.screenY - offset.clientY;
 				}
-				
+
+				console.log(x1,y1)
+				console.log('translate3d('+x1+'px,'+y1+'px,0)')
+
+				dom.style.width = width + 'px';
+				dom.style.height = height + 'px';
+
+				dom.style.transform = 'translate3d('+x1+'px,'+y1+'px,0)';
+				picture.style.transform = 'translate3d('+x2+'px,'+y2+'px,0)';
+
+
+				dom.position = [x1,y1];
+				picture.position = [x2,y2];
 			}
 
 			// 窗口停止绽放
 			var boxStop = function(event){
 				boxMove(event);
+
+				dom.left = dom.position[0];
+				dom.top = dom.position[1];
+
+				// console.log(dom.position);
+
+				picture.left = picture.position[0];
+				picture.top = picture.position[1];
+
 				window.removeEventListener('touchmove', boxMove, false);
 				window.removeEventListener('touchend', boxStop, false);
 			}
@@ -149,11 +208,17 @@
 
 				dom.width = parseFloat(dom.offsetWidth);
 				dom.height = parseFloat(dom.offsetHeight);
-				dom.left = parseFloat(dom.offsetLeft || 0);
-				dom.top = parseFloat(dom.offsetTop || 0);
 
-				picture.left = parseFloat(picture.offsetLeft || 0);
-				picture.top = parseFloat(picture.offsetTop || 0);
+				dom.left = dom.left || 0
+				dom.top = dom.top || 0;
+
+				console.log(dom.left,dom.top);
+
+
+
+				picture.left = picture.left || 0
+				picture.top = picture.top || 0;
+
 
 				window.addEventListener('touchmove', boxMove, false);	
 				window.addEventListener('touchend', boxStop, false);	
