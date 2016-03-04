@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="yes" name="apple-mobile-web-app-capable"/> 
+	<meta content="yes" name="apple-touch-fullscreen"/> 
+	<meta name="data-spm" content="a215s"/> 
+	<meta content="telephone=no,email=no" name="format-detection"/>
+	<meta content="fullscreen=yes,preventMove=no" name="ML-Config"/>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires"content="0">
+	<title>Document</title>
+	<style type="text/css">
+
+		html{height: 100%;}
+		body{height: 100%;background: #ddd;margin: 0;position: relative;overflow: hidden;}
+
+
+		.screenshot{position: absolute;top: 50px;left: 50px;width: 200px; height: 200px;border:1px solid #000;}
+		.screenshot_pic{position: absolute;left: 0;top: 0;width: 100%;height: 100%;overflow: hidden;}
+		.screenshot img{position: absolute;left: 0;top: 0;}
+		.screenshot_resize{position: absolute;background: #f00;width: 20px;height: 20px;right: -10px;bottom: -10px;z-index: 1;}
+		/*左上角*/
+		.screenshot_resize[position=lt]{left: -10px;top: -10px;}
+		/*右上角*/
+		.screenshot_resize[position=rt]{right: -10px;top: -10px;}
+		/*右下角*/
+		.screenshot_resize[position=lb]{left: -10px;bottom: -10px;}
+		/*左下角*/
+		.screenshot_resize[position=rb]{right: -10px;bottom: -10px;}
+
+	</style>
+
+</head>
+<body>
+	
+	
+
+	<div class="screenshot">
+		<div class="screenshot_pic"><img src="test.jpg" style="left:-200px;top:-200px"></div>
+		
+	</div>
+
+
+	<div class="screenshot" style="top: 300px;">
+		<div class="screenshot_pic"><img src="test.jpg"></div>
+	</div>
+
+	<script type="text/javascript">
+
+
+		var screenshot = (function(){
+
+
+			// 自动添加的内容
+			var tpl = '<div class="screenshot_resize" position="lt"></div>\
+						<div class="screenshot_resize" position="rt"></div>\
+						<div class="screenshot_resize" position="rb"></div>\
+						<div class="screenshot_resize" position="lb"></div>';
+
+			// 构造函数
+			var box = function(dom){
+
+				dom.innerHTML = dom.innerHTML + tpl;
+				this.dom = dom;
+				this.picture = this.dom.querySelector('img');
+				this.resize = Array.prototype.slice.call(this.dom.querySelectorAll('.screenshot_resize'),0);
+
+				this.init();
+				return this;
+			}
+
+			
+			var dom = null;		// 外面的框
+			var picture = null;	// 图片
+			var position = '';	// 缩放类型
+
+			// 图片移动
+			var pictureMove = function(event){
+				if(!event.touches[0]){return;}
+				var offset = event.touches[0];
+				picture.style.left = picture.left + offset.clientX - picture.screenX + 'px';
+				picture.style.top = picture.top + offset.clientY - picture.screenY + 'px';
+			}
+
+			// 图片停止移动
+			var pictureStop = function(event){
+				pictureMove(event);
+				window.removeEventListener('touchmove', pictureMove, false);
+				window.removeEventListener('touchend', pictureStop, false);
+			}
+
+			// 图片开始移动（初始化参数）
+			var pictureStart = function(event){
+
+				if(!event.touches[0]){return;}
+				this.screenX = event.touches[0].clientX;
+				this.screenY = event.touches[0].clientY;
+				this.left = parseFloat(this.offsetLeft || 0);
+				this.top = parseFloat(this.offsetTop || 0);
+				picture = this;
+				window.addEventListener('touchmove', pictureMove, false);	
+				window.addEventListener('touchend', pictureStop, false);	
+			}
+			
+
+			// 窗口缩放
+			var boxMove = function(event){
+				if(!event.touches[0]){return;}
+				var offset = event.touches[0];
+
+				if(position.indexOf('l')<0){
+					dom.style.width = dom.width + offset.clientX - dom.screenX + 'px';
+				}else{
+					dom.style.width = dom.width + dom.screenX - offset.clientX + 'px';
+					dom.style.left = dom.left + offset.clientX - dom.screenX + 'px';
+					picture.style.left = picture.left + dom.screenX - offset.clientX + 'px';
+				}
+
+				if(position.indexOf('t')<0){
+					dom.style.height = dom.height + offset.clientY - dom.screenY + 'px';
+				}else{
+					dom.style.height = dom.height + dom.screenY - offset.clientY + 'px';
+					dom.style.top = dom.top + offset.clientY - dom.screenY + 'px';
+					picture.style.top = picture.top + dom.screenY - offset.clientY + 'px';
+				}
+				
+			}
+
+			// 窗口停止绽放
+			var boxStop = function(event){
+				boxMove(event);
+				window.removeEventListener('touchmove', boxMove, false);
+				window.removeEventListener('touchend', boxStop, false);
+			}
+
+
+			// 窗口开始缩放[初始化参数]
+			var boxStart = function(){
+
+				dom = this.parentNode;	
+				picture = dom.querySelector('img');
+				type = this.getAttribute('position');
+
+				if(!event.touches[0]){return;}
+				dom.screenX = event.touches[0].clientX;
+				dom.screenY = event.touches[0].clientY;
+
+				dom.width = parseFloat(dom.offsetWidth);
+				dom.height = parseFloat(dom.offsetHeight);
+				dom.left = parseFloat(dom.offsetLeft || 0);
+				dom.top = parseFloat(dom.offsetTop || 0);
+
+				picture.left = parseFloat(picture.offsetLeft || 0);
+				picture.top = parseFloat(picture.offsetTop || 0);
+
+				window.addEventListener('touchmove', boxMove, false);	
+				window.addEventListener('touchend', boxStop, false);	
+
+			}
+
+
+			// 初始化，绑定事件
+			box.prototype.init = function(){
+
+				// 图片移动
+				this.picture.addEventListener('touchstart', pictureStart, false);
+
+				// 角框移动
+				this.resize.map(function(i){i.addEventListener('touchstart', boxStart, false);});
+			}
+
+			return box;
+
+		})();
+		
+
+
+
+		//使用方法
+		var test = document.querySelectorAll('.screenshot');
+		var a = new screenshot(test[0]);
+		var B = new screenshot(test[1]);
+
+
+	</script>
+
+
+
+</body>
+</html>
