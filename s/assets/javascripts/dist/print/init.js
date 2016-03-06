@@ -1,3 +1,0 @@
-/*! weimob_vshop_admin
-*author:<a.b.c@hd3p.com> */
-define("dist/print/init",["$","dist/application/app"],function(a){"use strict";var b=a("$"),c=a("dist/application/app"),d=(c.config,c.method);b(document).on("click",'[data-toggle="openPost"]',function(){var a=b(this),c=a.closest("form"),e=a.data("set"),f=a.data("type")||"post",g=a.data("action"),h=c.hasClass("form-modal"),i=null;if(c.length&&c.valid()){var j=c.serializeArray();j.push({name:"set",value:e}),h&&(i=c.parents(".modal"),i&&i.modal("hide"),d.OpenWindowWithPost(g||c.attr("action"),"_blank",j,f))}})});
