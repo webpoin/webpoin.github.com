@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+
+		body{margin: 20px;}
+		.box{position: relative;font-size: 0;white-space: nowrap;font-family: serif;border:1px solid #ddd;overflow: hidden;}
+		.boxinside{position: relative;left:0;transition: all 0.7s;}
+		.boxitem{display: inline-block;position: relative;width: 100%;overflow: hidden;}
+
+		.boxinside.toright{left: -100%;}
+		.boxinside.toleft{left: 0;}
+
+		ul{display: inline-block; position: relative;margin: 0;padding: 0;white-space: normal;word-spacing: -5px; width: 100%;padding-bottom: 15px; font-size: 0;}
+		li{display: inline-block;position: relative;font-size: 12px; left:0px; width: 20%; border:2px solid transparent;font-size: 12px;transition: all .3s cubic-bezier(0.29, 0.18, 0.5, 2);}
+
+		li img{width: 100%;}
+		li p{margin: 15px 15px 0;}
+
+		/*li:before{content: '';display: block;padding-top: 120%;margin:20px; background-color: #C7C7C7;}*/
+
+
+		/*li{-webkit-animation: 2s rainbow infinite linear;}*/
+
+		/*li:hover{}*/
+		.boxinside.toright li.active{left:-50px;}
+		.boxinside.toright ul{left: 50px;}
+		.boxinside.toleft li.active{left:50px;}
+		.boxinside.toleft ul{left: -50px;}
+
+		.btn{padding: 20px 0;text-align: center;}
+		.btn a{display: inline-block;width: 50px;height: 50px;background-color: #16AF1B;color:#fff;line-height: 50px;cursor: pointer;}
+		.btn a.disabled{background-color: #ddd;}
+
+
+
+		/*.background{position: absolute;width: 298px;height: 48px;border:1px solid #000;}*/
+
+
+
+	</style>
+</head>
+<body>
+	
+	
+	<div class="box">
+		<div class="boxinside">
+			<div class="boxitem">
+				<ul>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+				</ul>
+			</div>
+			<div class="boxitem">
+				<ul>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+					<li><p><img src="video.jpg" ></p></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="btn">
+		<a class="toleft disabled">←</a>
+		<a class="toright">→</a>
+	</div>
+
+
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	
+	<script type="text/javascript">
+
+
+
+		var $ul = $('ul'); // 所有的ul标签
+		var $li0 =  $ul.eq(0).find('li');  // 第一页的每个图片
+		var $li1 =  $ul.eq(1).find('li');  // 第二页的每个图片
+		var $boxinside = $('.boxinside');  // 需要滚动的容器
+		var $btn = $('.btn').find('a');
+
+
+
+		// 向右时
+		$('.toright').on('click',function(){
+
+			// 第二页累加延迟触发动画
+			$li1.each(function(index,b,c){
+				var that = this; // 缓存this变量
+				setTimeout(function(){$(that).addClass('active')},index*30+300); // 延迟累加
+			})
+
+			// 第一页去掉选中效果
+			$li0.removeClass('active');
+
+			// 修改容器状态
+			$boxinside.removeClass('toleft').addClass('toright');
+
+			// 更改按钮状态
+			$btn.removeClass('disabled').eq(1).addClass('disabled');
+
+		})
+
+		// 向左时
+		$('.toleft').on('click',function(){
+
+			// 第二页累加延迟触发动画
+			$li0.each(function(index,b,c){
+				var that = this; // 缓存this变量
+				setTimeout(function(){$(that).addClass('active')},index*30+300); // 延迟累加
+			})
+
+			// 第二页去掉选中效果
+			$li1.removeClass('active');
+
+			// 修改容器状态
+			$boxinside.removeClass('toright').addClass('toleft');
+
+			// 更改按钮状态
+			$btn.removeClass('disabled').eq(0).addClass('disabled');
+
+		})
+
+
+
+
+	</script>
+
+
+</body>
+</html>
