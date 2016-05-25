@@ -7,27 +7,25 @@
 
 
 		body{margin: 20px;}
-		.box{position: relative;font-size: 0;white-space: nowrap;font-family: serif;border:1px solid #ddd;overflow: hidden;}
+		.box{position: relative;font-size: 0;white-space: nowrap;font-family: serif;border:1px solid #ddd;overflow: hidden;background-color: #34457B;}
 		.boxinside{position: relative;left:0;transition: all 0.7s;}
-		.boxitem{display: inline-block;position: relative;width: 100%;overflow: hidden;}
+		.boxitem{display: inline-block;position: relative;width: 100%;overflow: hidden;vertical-align: top;}
 
 		.boxinside.toright{left: -100%;}
 		.boxinside.toleft{left: 0;}
 
-		ul{display: inline-block; position: relative;margin: 0;padding: 0;white-space: normal;word-spacing: -5px; width: 100%;padding-bottom: 15px; font-size: 0;}
-		li{display: inline-block;position: relative;font-size: 12px; left:0px; width: 20%; border:2px solid transparent;font-size: 12px;transition: all .3s cubic-bezier(0.29, 0.18, 0.5, 2);}
+		ul{position: relative;margin: 0;padding: 0;white-space: normal;word-spacing: -5px; padding-bottom: 15px;padding: 20px;}
+		li{display: inline-block;vertical-align: top; position: relative;font-size: 12px; left:0px; width: 20%; border:2px solid transparent;font-size: 12px; transition: all 0.3s cubic-bezier(0.29, 0.18, 0.5, 2);}
 
-		li img{width: 100%;}
-		li p{margin: 15px 15px 0;}
+		li p{position: relative; height: 0;margin: 0;padding-bottom: 137.66%;text-align: center;}
+		li img{position: relative;z-index: 1;vertical-align: top;width: 100%;border-radius: 6px;width: 90%;transition: all 0.7s;margin-top: 5%;}
 
-		/*li:before{content: '';display: block;padding-top: 120%;margin:20px; background-color: #C7C7C7;}*/
-
-
-		/*li{-webkit-animation: 2s rainbow infinite linear;}*/
-
-		/*li:hover{}*/
 		.boxinside.toright li.active{left:-50px;}
 		.boxinside.toright ul{left: 50px;}
+
+
+
+
 		.boxinside.toleft li.active{left:50px;}
 		.boxinside.toleft ul{left: -50px;}
 
@@ -36,8 +34,23 @@
 		.btn a.disabled{background-color: #ddd;}
 
 
+		.boxinside li.enter img{width: 100%;margin-top: 0;}
 
-		/*.background{position: absolute;width: 298px;height: 48px;border:1px solid #000;}*/
+		.boxinside li.showmark p:after{content: ''; cursor:pointer;position: absolute;left: -5px;width: 100%; top: -5px;height: 100%;z-index: 9999;box-shadow: 0 0 50px #5DC3F1;border-radius: 8px; border:5px solid #5DC3F1;
+
+
+			background-image: -moz-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,0.5),rgba(255,255,255,0));
+			background-image: -webkit-linear-gradient(-25deg,rgba(255,255,255,1),rgba(255,255,255,0),rgba(255,255,255,0));}
+
+		h6{position: absolute;left: -100%;top: 50px;margin-left: -25px;margin-top: -23px; width: 203px;height: 279px; box-shadow: 0 0 50px #5DC3F1;transition: all .2s;z-index: 2;border-radius: 8px;overflow: hidden; border:5px solid #5DC3F1;}
+
+
+		h6:after{content: ''; cursor:pointer;position: absolute;left: 0;width: 100%; top: 0;height: 100%;z-index: 9999;
+
+
+			background-image: -moz-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,0.5),rgba(255,255,255,0));
+			background-image: -webkit-linear-gradient(-25deg,rgba(255,255,255,1),rgba(255,255,255,0),rgba(255,255,255,0));
+		}
 
 
 
@@ -47,18 +60,19 @@
 	
 	
 	<div class="box">
-		<div class="boxinside">
+		<div class="boxinside toleft">
 			<div class="boxitem">
 				<ul>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
-					<li><p><img src="video.jpg" ></p></li>
+					<li class="active showmark enter"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
+					<li class="active"><p><img src="video.jpg" ></p></li>
 				</ul>
 			</div>
 			<div class="boxitem">
@@ -74,6 +88,8 @@
 					<li><p><img src="video.jpg" ></p></li>
 				</ul>
 			</div>
+			<h6></h6>
+
 		</div>
 	</div>
 
@@ -95,6 +111,8 @@
 		var $li1 =  $ul.eq(1).find('li');  // 第二页的每个图片
 		var $boxinside = $('.boxinside');  // 需要滚动的容器
 		var $btn = $('.btn').find('a');
+
+		// var $slider = $('h6');
 
 
 
@@ -139,6 +157,78 @@
 		})
 
 
+		// 监听键盘事件
+		document.addEventListener('keydown', function (evt) {
+
+			// 取当前选中的块的序号
+			var index = $ul.find('li').index($ul.find('li.enter'));
+
+
+ 			if(evt.keyCode == 39){ // 向右
+ 				index += 1;
+ 			}else if(evt.keyCode == 37){ // 向左
+ 				index -= 1;
+ 			}else if(evt.keyCode == 38){ // 向上
+ 				index -= 5;
+ 			}else if(evt.keyCode == 40){ // 向下
+ 				index += 5;
+ 			}else{
+ 				return;
+ 			}
+ 			
+
+			var $li = $ul.find('li').eq(index); // 根据序号取当前选中的节点
+			var offset = $li.offset(); // 计算节点的偏移
+			var slider = $li.closest('.boxinside').children('h6'); //  滑块
+			var $other = $ul.find('li').not($li); // 选中的节点以外的同类节点
+
+
+
+			// 如果索引小于0，表示没有数据了，防止jquery提供负值也找到节点
+			if(index <0){return};
+			// 如果没有选中的节点，则不动
+			if($li.length== 0){return}
+
+			// 节点小于10时，表示在第一页，触发向左滑动事件
+			if(index <10){
+
+				var toleft = $('.toleft');
+				!toleft.is('.disabled') && toleft.trigger('click');
+
+			// 节点小于10时，表示在第二页，触发向右滑动事件
+			}else{
+				var toright = $('.toright');
+				!toright.is('.disabled') && toright.trigger('click');
+			}
+
+			// 添加class，使图片变大
+			$li.addClass('enter');
+			// 其他的图片变小
+			$other.removeClass('enter');
+			// 其他的去掉框框
+			$other.removeClass('showmark');
+
+			// 显示滑块
+			slider.show();
+
+			// 滑块动画
+			slider.css({left:offset.left - parseFloat($boxinside.css('left')) , top:offset.top, width:$li.width(),height:$li.height()});
+
+
+			// 动画完成后，要还原场景
+			setTimeout(function(){
+
+				// 隐藏滑块
+				slider.hide();
+
+				// 显示框框，其他选项再次去框框
+				$li.addClass('showmark').siblings().removeClass('showmark');
+				
+			},200);
+
+
+
+		});
 
 
 	</script>
