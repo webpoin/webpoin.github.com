@@ -1,1 +1,30 @@
-html{font-size:62.5%}body{font-size:1.4rem}body{}.absolutely{padding-left:0!important;padding-right:0!important}.margin_none{margin-left:0!important;margin-right:0!important}*{padding:0;margin:0;font-family:default "arial, helvetica, sans-serif"}input{outline:medium}a:hover{text-decoration:none}ul li{list-style-type:none}img{border:0}.black{width:30%;height:auto}.place{float:left}h2{margin-top:0!important;z-index:9999}h2 strong{font-size:16px!important;font-weight:bold}h2 a{line-height:30px}h2 a img{width:80%;height:auto}.item img{width:100%;height:auto;display:block}.item p{background-color:white;padding:4px 0 4px 5%;text-align:left;margin-bottom:0!important}.carousel-indicators{bottom:30px!important}.carousel-indicators li{border-color:#ff686d;width:8px;height:8px}.carousel-indicators li.active{background-color:#ff686d;width:10px;height:10px}.carousel-inner{margin-bottom:0!important}.img1{display:block;width:100%;height:auto;margin:10px auto}.bottom{bottom:-10px!important}.matop{margin-top:43px}.shop_box{width:100%;height:auto;display:block;overflow:hidden;overflow-x:scroll}.shop_box .shop{width:200%;height:auto}.shop_box .shop li{float:left;width:33%}.peo .shop{width:300%}
+html{font-size:62.5%}
+body{font-size:1.4rem}
+.absolutely{padding-left:0!important;padding-right:0!important}
+.margin_none{margin-left:0!important;margin-right:0!important}
+*{padding:0;margin:0;font-family:default "arial, helvetica, sans-serif"}
+input{outline:medium}
+a:hover{text-decoration:none}
+ul li{list-style-type:none}
+img{border:0}
+.black{width:30%;height:auto}
+.place{float:left}
+h2{margin-top:0!important;z-index:9999}
+h2 strong{font-size:16px!important;font-weight:bold}
+h2 a{line-height:30px}
+h2 a img{width:80%;height:auto}
+.item img{width:100%;height:auto;display:block}
+.item p{background-color:white;padding:4px 0 4px 5%;text-align:left;margin-bottom:0!important}
+.carousel-indicators{bottom:30px!important}
+.carousel-indicators li{border-color:#ff686d;width:8px;height:8px}
+.carousel-indicators li.active{background-color:#ff686d;width:10px;height:10px}
+.carousel-inner{margin-bottom:0!important}
+.img1{display:block;width:100%;height:auto;margin:10px auto}
+.bottom{bottom:-10px!important}
+.matop{margin-top:12%;position: relative;overflow: hidden;}
+.shop_box{width:100%;height:auto;display:block;overflow:hidden;overflow-x:scroll;}
+.shop_box .shop{width:200%;height:auto}
+.shop_box .shop li{float:left;width:33%}
+.peo .shop{width:300%}
+
+

@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>咕咚WE</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css"> 
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="css/less.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css"> 
+
 </head>
 <body>
 
 	<div id="all" >
-		<!-- <div id="header" class="header"style="display:block;">
-			<img id="header_img" src="" alt="" style="width:100%;vertical-align:top;">
+		<!-- <div id="header" class="header" style="display:block;">
+			<img src="" alt="" >
 			<span>咕咚WE</span>
 			<a id="top_left" href="id_index" class="link_top_left">
-				<img id="header_img" src="./images/head/background.png" style="width:100%;vertical-align:top;"></a>
 			<a id="top_right" href="id_index" class="link_top_right"></a>
 		</div> -->
 		<div id="main" class="main">
@@ -55,42 +55,25 @@
 			<!--首页开始-->
 			<div id="id_index" class="id_index" showfooter="index">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>咕咚we</strong>
-					<a href="mine_index" style="left:3%;"><img src="./images/head/head.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/detail.png"></a>
+					<cite>
+						<strong>咕咚we</strong>
+						<a href="mine_index" style="left:3%;"><img src="./images/head/head.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/detail.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/index/index.png">
-             <!--轮播开始-->
-				<center id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				  </ol>
-				
-				  <!-- Wrapper for slides -->
-				  <ul class="carousel-inner" role="listbox">
-				    <li class="item active">
-				      <img src="images/index/banner.png" alt="...">
-				      <p>错过这次就得等下次了</p>
-				    </li>
-				    <li class="item">
-				      <img src="images/index/banner_1.png" alt="...">
-				      <p>机会只有一次</p>
-				    </li>
-				    
-				     <li class="item">
-				      <img src="images/index/banner_2.png" alt="...">
-				      <p>来啊来啊，机会难得</p>
-				    </li>
-				  </ul>
-				
-				  <!-- Controls -->
-				   
-				</center>
-               <!--轮播结束-->
+
+				<div id="slideBox" class="slideBox">
+					<div class="bd">
+						<ul>
+							<li><img src="images/index/banner.png" /></li>
+							<li><img src="images/index/banner_1.png"/></li>
+							<li><img src="images/index/banner_2.png"/></li>
+						</ul>
+					</div>
+					<div class="hd"><ul></ul></div>
+				</div>
+
 				<img  class="img1" src="./images/index/index_1.png">
 				<img  class="img1" src="./images/index/index_1.png">
 				<a href="mine_index"  class="link_id_my"></a>
@@ -104,9 +87,10 @@
 			
 			<div id="id_mylc" class="id_mylc">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>我的理财</strong>
-					<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>		 
+					<cite>
+						<strong>我的理财</strong>
+						<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>		 
+					</cite>
 				</h2>
 				<img  class="img" src="./images/index/mylc.png">
 				<img  class="img" src="./images/index/mylc_1.png">
@@ -115,10 +99,11 @@
 
 			<div id="id_detail" class="id_detail">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>我的明细</strong>
-					<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>我的明细</strong>
+						<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/index/detail.png">
 				<a href="id_index" class="link_return"></a>
@@ -126,9 +111,10 @@
 
 			<div id="id_draw" class="id_draw">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>抽奖活动</strong>
-					<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>		 
+					<cite>
+						<strong>抽奖活动</strong>
+						<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>		 
+					</cite>
 				</h2>
 				<img  class="img" src="./images/index/draw.png">
 				<img  class="img" src="./images/index/draw_1.png">
@@ -165,9 +151,10 @@
 			<!--公益开始-->
 			<div id="pub_index" class="pub_index" showfooter="pub">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>公益</strong>
-					 
+					<cite>
+						<strong>公益</strong>
+						 
+					</cite>
 				</h2>	
 				<span class="shop_box peo">
 					<ul class="shop">
@@ -190,10 +177,11 @@
 			<!--天网-->
 			<div id="pub_tw" class="pub_tw">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>天网</strong>
-					<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>天网</strong>
+						<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/public/tw.png">
 				<img  class="img" src="./images/public/tw_1.png">
@@ -236,10 +224,11 @@
 			
 			<div id="pub_find" class="pub_find">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>天网</strong>
-					<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>天网</strong>
+						<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/public/find.png">
 				<img  class="img" src="./images/public/find_2.png">
@@ -257,10 +246,11 @@
 			</div>
 			<div id="pub_doubtful" class="pub_doubtful">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>天网</strong>
-					<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>天网</strong>
+						<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/public/doubtful.png">
 				<img  class="img" src="./images/public/doubtful_1.png">
@@ -274,10 +264,11 @@
 			<div id="pub_add" class="pub_add" >
 
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>天网</strong>
-					<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>天网</strong>
+						<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/public/tw.png">
 				<img  class="img" src="./images/public/tw_1.png">
@@ -403,10 +394,11 @@
 
 			<div id="pub_activity" class="pub_activity">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>公益活动</strong>
-					<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>公益活动</strong>
+						<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/public/activity.png">
 				<img  class="img" src="./images/public/activity_1.png">
@@ -419,10 +411,11 @@
 
 			<div id="pub_mine" class="pub_mine">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>我的公益</strong>
-					<a href="pub_activity" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>我的公益</strong>
+						<a href="pub_activity" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/public/mine.png">
 				<a href="pub_index" class="link_return"></a>
@@ -433,10 +426,11 @@
 
 			<div id="pub_detail" class="pub_detail">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>公益明细</strong>
-					<a href="pub_activity" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					 
+					<cite>
+						<strong>公益明细</strong>
+						<a href="pub_activity" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						 
+					</cite>
 				</h2>
 				<img  class="img" src="./images/public/detail.png">
 				<a href="pub_activity" class="link_return"></a>
@@ -447,43 +441,28 @@
 			<!--社区开始-->
 			<div id="com_index" class="com_index" showfooter="com">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>社区</strong>
-					<a href="id_index" style="left:3%;"><img  src="./images/head/place.png"></a>					 
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>社区</strong>
+						<a href="id_index" style="left:3%;"><img  src="./images/head/place.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
-				
-				<!--轮播开始-->
-				<center id="carousel-example-generic" class="carousel slide matop" data-ride="carousel">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators bottom">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				  </ol>
-				
-				  <!-- Wrapper for slides -->
-				  <ul class="carousel-inner" role="listbox">
-				    <li class="item active">
-				      <img src="images/index/banner.png" alt="...">
-				       
-				    </li>
-				    <li class="item">
-				      <img src="images/index/banner_1.png" alt="...">
-				      
-				    </li>
-				    
-				     <li class="item">
-				      <img src="images/index/banner_2.png" alt="...">
-				       
-				    </li>
-				  </ul>
-				
-				  <!-- Controls -->
-				   
-				</center>
-               <!--轮播结束-->
-               <img  class="img" src="./images/community/tab.png">
+
+				<div style="height:1px;"></div>
+				<div id="slideBox2" class="slideBox" style="margin-top:12%;">
+					<div class="bd">
+						<ul>
+							<li><img src="images/index/banner.png" /></li>
+							<li><img src="images/index/banner_1.png"/></li>
+							<li><img src="images/index/banner_2.png"/></li>
+						</ul>
+					</div>
+					<div class="hd"><ul></ul></div>
+				</div>
+
+
+
+               	<img  class="img" src="./images/community/tab.png">
 				<img  class="img" src="./images/community/one.png">
 				<span class="shop_box">
 					<ul class="shop">
@@ -540,10 +519,10 @@
 			
 			<div id="com_cart" class="com_cart">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>购物车</strong>
-					<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					 
+					<cite>
+						<strong>购物车</strong>
+						<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/community/shoppingcart.png">
 				<a href="com_index" class="link_return"></a>
@@ -554,10 +533,11 @@
 
 			<div id="com_dr" class="com_dr">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>活动达人</strong>
-					<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>活动达人</strong>
+						<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/community/daren.png">
 				<img  class="img" src="./images/community/daren_1.png">
@@ -569,10 +549,11 @@
 
 			<div id="com_send" class="com_send">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>生活配送</strong>
-					<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>					 
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>生活配送</strong>
+						<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>					 
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/community/send.png">
 				<img  class="img" src="./images/community/send_1.png">
@@ -586,10 +567,11 @@
 			
 			<div id="com_xq" class="com_xq">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>商品详情</strong>
-					<a href="com_send" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
+					<cite>
+						<strong>商品详情</strong>
+						<a href="com_send" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/community/xq.png">
 
@@ -602,10 +584,11 @@
 
 			<div id="com_bankcard" class="com_bankcard">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>首次支付绑定银行卡</strong>
-					<a href="com_xq" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					
+					<cite>
+						<strong>首次支付绑定银行卡</strong>
+						<a href="com_xq" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						
+					</cite>
 				</h2>
 				<img  class="img" src="./images/community/bank_card.png">
 				<a href="com_xq" class="link_return"></a>
@@ -614,10 +597,11 @@
 
 			<div id="com_confirm" class="com_confirm">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>确认订单</strong>
-					<a href="com_bankcard" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
+					<cite>
+						<strong>确认订单</strong>
+						<a href="com_bankcard" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/community/confirm.png">
 				<img  class="img_bottom" src="./images/community/confirm_bottom.png">
@@ -640,10 +624,11 @@
 
 			<div id="com_service" class="com_service">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>生活服务</strong>
-					<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>生活服务</strong>
+						<a href="com_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/community/service.png">
 				<img  class="img" src="./images/community/service_1.png">
@@ -659,10 +644,11 @@
 			<!--我的开始-->
 			<div id="mine_index" class="mine_index" showfooter="mine">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>我的</strong>
-					<a href="mine_index" style="left:3%;"><img  src="./images/head/setup.png"></a>				 
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information_zero.png"></a>
+					<cite>
+						<strong>我的</strong>
+						<a href="mine_index" style="left:3%;"><img  src="./images/head/setup.png"></a>				 
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information_zero.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/mine/index.png">
 				<a href="mine_sign"  class="link_mine_sign"></a>
@@ -676,10 +662,11 @@
 
 			<div id="mine_sign" class="mine_sign">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>签到</strong>
-					<a href="mine_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
+					<cite>
+						<strong>签到</strong>
+						<a href="mine_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;width: 16%;"><img src="./images/head/fin.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/mine/sign.png">
 				<a href="mine_index" class="link_return"></a>
@@ -692,10 +679,11 @@
 
 			<div id="mine_bonus" class="mine_bonus">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>咕咚WE分红</strong>
-					<a href="mine_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
+					<cite>
+						<strong>咕咚WE分红</strong>
+						<a href="mine_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/mine/bonus.png">
 				<a href="mine_index" class="link_return"></a>
@@ -708,10 +696,11 @@
 			<div id="task_index" class="task_index">
 				 
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>任务区</strong>
-					<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>任务区</strong>
+						<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/task/index.png">
 				<img  class="img" src="./images/task/index_1.png">
@@ -725,10 +714,11 @@
 
 			<div id="task_reward" class="task_reward">
 				<h2>
-					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>任务区</strong>
-					<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
-					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					<cite>
+						<strong>任务区</strong>
+						<a href="id_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+						<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+					</cite>
 				</h2>
 				<img  class="img" src="./images/task/reward.png">
 				<img  class="img" src="./images/task/reward_1.png">
@@ -768,10 +758,10 @@
 		</div>
 		<div id="footer" class="footer footer_index">
 			<cite>
-				<img class="index" src="./images/bottom/index.png" alt="" style="width:100%;vertical-align:top;">
-				<img class="pub" src="./images/bottom/pub.png" alt="" style="width:100%;vertical-align:top;">
-				<img class="com" src="./images/bottom/com.png" alt="" style="width:100%;vertical-align:top;">
-				<img class="mine" src="./images/bottom/mine.png" alt="" style="width:100%;vertical-align:top;">
+				<img class="index" src="./images/bottom/index.png" alt="" >
+				<img class="pub" src="./images/bottom/pub.png" alt="" >
+				<img class="com" src="./images/bottom/com.png" alt="" >
+				<img class="mine" src="./images/bottom/mine.png" alt="" >
 
 
 				<a href="id_index"  class="link_dom_id"></a>
@@ -841,14 +831,29 @@
 	
 
 </script>
-<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
-<script type="text/javascript" src="js/bootstrap.min.js" ></script>
-<script>
-	$(function(){
-		$('.carousel').carousel({
-  interval: 500
-})
-	})
+<script type="text/javascript" src="js/touchslider.js"></script>
+<script type="text/javascript">
+	
+	TouchSlide({ 
+		slideCell:"#slideBox",
+		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+		mainCell:".bd ul", 
+		effect:"leftLoop", 
+		autoPage:true,//自动分页
+		autoPlay:true //自动播放
+	});
+
+	TouchSlide({ 
+		slideCell:"#slideBox2",
+		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+		mainCell:".bd ul", 
+		effect:"leftLoop", 
+		autoPage:true,//自动分页
+		autoPlay:true //自动播放
+	});
+
+
+
 </script>
 </body>
 </html>
