@@ -1,4 +1,6 @@
-body{margin: 0;}
+html{height: 100%;}
+
+body{margin: 0;background-color: #fff;min-height: 100%;}
 a{position: absolute;background-color: #000000;opacity:0.0;}
 img{width:100%;}
 
@@ -26,13 +28,29 @@ a.link_top_right{right:0%;top:0%;width: 17%;height: 7%;}
 /*头部css结束*/
 
 /*底部css开始*/
-.filter_hide{display:none;width:100%;height:70px;}
-.footer{display:block;position: fixed;z-index:998;bottom:0;width:100%;}
+.footer{display:none;height: 49px;}
+.footer cite{position: fixed;z-index:998;bottom:0;width:100%;left: 0;}
+.footer img{display: none;}
 .footer a{position:absolute;top: 0;height: 100%;width: 20%;}
 .footer a.link_dom_id{left:0%;}
 .footer a.link_dom_pub{left:28%;}
 .footer a.link_dom_com{left:53%;}
 .footer a.link_dom_mine{left:78%;}
+
+.footer_index {display: block;}
+.footer_index img.index{display: block;}
+
+
+.footer_pub {display: block;}
+.footer_pub img.pub{display: block;}
+
+.footer_com {display: block;}
+.footer_com img.com{display: block;}
+
+.footer_mine {display: block;}
+.footer_mine img.mine{display: block;}
+
+
 /*底部css结束*/
 
 /*登录页css*/
@@ -102,11 +120,11 @@ a.link_com_dr,a.link_com_send,a.link_com_service{width: 32%;height: 8%;}
 .com_send a.link_com_service{right:0%;}
 
 .com_send a.link_com_xq{top:43%;width:100%;height:50%;}
-.com_xq   a.link_com_bankcard{top:93%;right:0;width:33%;height:11%;}
-.com_cart   a.link_com_bankcard{top:93%;right:0;width:33%;height:11%;}
+.com_xq   a.link_com_bankcard{position: fixed; bottom: 0;right:0;width:33%;height:11%;}
+.com_cart   a.link_com_bankcard{position: fixed; bottom: 0; right:0;width:33%;height:11%;z-index: 1;}
 .com_bankcard  a.link_com_confirm{top:44%;width:100%;height:11%;}
 .com_confirm   a.link_com_pay{top:93%;width:30%;height:11%;right: 0;}
-.com_pay       a.link_com_pay{top:48%;width:100%;height:11%;}
+.com_pay       a.link_com_pay{top: 0;left: 0;width: 100%;height: 100%;}
 .com_payok     a.link_com_index{top:0;width:100%;height:100%;}
 
 .com_service a.link_com_dr,.com_service a.link_com_send,.com_service a.link_com_service{top:7%;}
@@ -117,7 +135,7 @@ a.link_com_dr,a.link_com_send,a.link_com_service{width: 32%;height: 8%;}
 /*社区css结束*/
 
 /*公益css开始*/
-.pub_index a.link_pub_tw,.pub_index a.link_pub_activity{top:85%;width:48%;height: 10%;}
+.pub_index a.link_pub_tw,.pub_index a.link_pub_activity{top:80%;width:48%;height: 10%;}
 .pub_index a.link_pub_tw{left:0;}
 .pub_index a.link_pub_activity{right:0;}
 
@@ -137,4 +155,29 @@ a.link_pub_pull_other {right: 0;}
 .pub_activity a.link_pub_detail{top:16%;width:100%;height: 80%;}
 
 
+
+.img_bottom{position: fixed;left: 0;bottom: 0;width: 100%;}
+
+#com_pay img{position: fixed;width: 100%;left: 0; height: 100%;}
+
+
+.id_detail,.com_payok {position: fixed;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: #EEF2F4;}
+.com_xq {position: fixed;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: #EEF2F4;}
+.pub_add {position: fixed;left: 0;top: 0;width: 100%;height: 100%;overflow: hidden;}
+.id_index {background-color: #EEF2F4;}
+
+.draw_shake {position: fixed;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: #FFECBA;}
+.draw_ok ,.draw_no{position: fixed;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: #C1B491;}
 /*公益css结束*/
+
+
+
+
+
+
+
+
+
+
+
+

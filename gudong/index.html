@@ -53,10 +53,10 @@
 			<!--登录页结束-->
 
 			<!--首页开始-->
-			<div id="id_index" class="id_index" style="display:block;">
+			<div id="id_index" class="id_index" showfooter="index">
 				<h2>
 					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
-					<strong>wo</strong>
+					<strong>咕咚we</strong>
 					<a href="mine_index" style="left:3%;"><img src="./images/head/head.png"></a>
 					<a href="id_detail" style="right:3%;"><img src="./images/head/detail.png"></a>
 				</h2>
@@ -157,12 +157,13 @@
 
 			<div id="draw_share" class="draw_share">
 				<img  class="img" src="./images/index/share.png">
+				<a href="draw_shake" style="top:0;width:100%;height:100%;"></a>
 				 
 			</div>
 			<!--首页结束-->
 
 			<!--公益开始-->
-			<div id="pub_index" class="pub_index">
+			<div id="pub_index" class="pub_index" showfooter="pub">
 				<h2>
 					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
 					<strong>公益</strong>
@@ -270,14 +271,66 @@
 				<a href="pub_doubtful" class="link_pub_doubtful"></a>
 				<a href="pub_add" class="link_pub_add"></a>
 			</div>
-			<div id="pub_add" class="pub_add">
-				<img  class="img" src="./images/public/create.png">
+			<div id="pub_add" class="pub_add" >
+
+				<h2>
+					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
+					<strong>天网</strong>
+					<a href="pub_index" style="left:3%;"><img class="black" src="./images/head/black.png"></a>
+					<a href="id_detail" style="right:3%;"><img src="./images/head/information.png"></a>
+				</h2>
+				<img  class="img" src="./images/public/tw.png">
+				<img  class="img" src="./images/public/tw_1.png">
+				<span class="shop_box">
+					<ul class="shop">
+						<li>
+						<img  class="img" src="./images/public/none.png">						 
+						</li>
+						<li>
+						<img  class="img" src="./images/public/none_2.png">						 
+						</li>
+						<li>
+						<img  class="img" src="./images/public/none_3.png">				 
+						</li>
+					</ul>
+				</span>
+				<img  class="img" src="./images/public/tw_2.png">
+				<img  class="img" src="./images/public/tw_1.png">
+				<span class="shop_box">
+					<ul class="shop">
+						<li>
+						<img  class="img" src="./images/public/none.png">						 
+						</li>
+						<li>
+						<img  class="img" src="./images/public/none_2.png">						 
+						</li>
+						<li>
+						<img  class="img" src="./images/public/none_3.png">				 
+						</li>
+					</ul>
+				</span>
+				<img  class="img" src="./images/public/tw_2.png">
 				<a href="pub_index" class="link_return"></a>
 				<a href="pub_message" class="link_top_right"></a>
 				<a href="pub_tw" class="link_pub_help"></a>
 				<a href="pub_find" class="link_pub_find"></a>
 				<a href="pub_doubtful" class="link_pub_doubtful"></a>
 				<a href="pub_add" class="link_pub_add"></a>
+				<a href="pub_tw" style="position: fixed;left: 0;top: 13.7%;width: 100%;bottom: 0;background:rgba(0,0,0,0.3);z-index: 99;opacity: 1;"></a>
+
+				<img  class="img" src="./images/public/massage_action.png" style="position: fixed;top: 13.7%;right: 3%;width:30%;z-index: 999;"> 
+
+
+
+				<!-- <a href="pub_tw" style="display: block;opacity: 1;">
+					<img  class="img" src="./images/public/create.png">
+				</a>
+				<a href="pub_index" class="link_return"></a>
+				<a href="pub_message" class="link_top_right"></a>
+				<a href="pub_tw" class="link_pub_help"></a>
+				<a href="pub_find" class="link_pub_find"></a>
+				<a href="pub_doubtful" class="link_pub_doubtful"></a>
+				<a href="pub_add" class="link_pub_add"></a> -->
 			</div>
 
 			<div id="pub_pull_zh" class="pub_pull_zh">
@@ -392,7 +445,7 @@
 			<!--公益结束-->
 
 			<!--社区开始-->
-			<div id="com_index" class="com_index">
+			<div id="com_index" class="com_index" showfooter="com">
 				<h2>
 					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
 					<strong>社区</strong>
@@ -495,6 +548,8 @@
 				<img  class="img" src="./images/community/shoppingcart.png">
 				<a href="com_index" class="link_return"></a>
 				<a href="com_bankcard" class="link_com_bankcard"></a>
+
+				<img class="img" src="./images/community/shoppingcart_bottom.png" style="position: fixed;bottom:0;left:0;">
 			</div>
 
 			<div id="com_dr" class="com_dr">
@@ -537,6 +592,9 @@
 					<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
 				</h2>
 				<img  class="img" src="./images/community/xq.png">
+
+				<img  class="img_bottom" src="./images/community/xq_bottom.png">
+
 				<a href="com_index" class="link_return"></a>
 				<a href="com_index" class="link_return"></a>
 				<a href="com_bankcard" class="link_com_bankcard"></a>
@@ -562,6 +620,7 @@
 					<a href="id_detail" style="right:3%;width: 16%;margin-top: 8px;"><img src="./images/head/fin.png"></a>
 				</h2>
 				<img  class="img" src="./images/community/confirm.png">
+				<img  class="img_bottom" src="./images/community/confirm_bottom.png">
 				<a href="com_bankcard" class="link_return"></a>
 				<a href="com_pay" class="link_com_pay"></a>
 			</div>
@@ -598,7 +657,7 @@
 
 
 			<!--我的开始-->
-			<div id="mine_index" class="mine_index">
+			<div id="mine_index" class="mine_index" showfooter="mine">
 				<h2>
 					<img id="header_img" src="./images/head/background.png"style="width:100%;vertical-align:top;">
 					<strong>我的</strong>
@@ -707,18 +766,41 @@
 			
 			<!--任务结束-->
 		</div>
-		<div id="filter_hide" class="filter_hide"></div>
-		<div id="footer" class="footer">
-				<img id="footer_img" src="./images/bottom/index.png" alt="" style="width:100%;vertical-align:top;">
+		<div id="footer" class="footer footer_index">
+			<cite>
+				<img class="index" src="./images/bottom/index.png" alt="" style="width:100%;vertical-align:top;">
+				<img class="pub" src="./images/bottom/pub.png" alt="" style="width:100%;vertical-align:top;">
+				<img class="com" src="./images/bottom/com.png" alt="" style="width:100%;vertical-align:top;">
+				<img class="mine" src="./images/bottom/mine.png" alt="" style="width:100%;vertical-align:top;">
+
 
 				<a href="id_index"  class="link_dom_id"></a>
 				<a href="pub_index"  class="link_dom_pub"></a>
 				<a href="com_index"  class="link_dom_com"></a>
 				<a href="mine_index"  class="link_dom_mine"></a>
+			</cite>
 		</div>
 	</div>
 
 <script type="text/javascript">
+
+
+
+	!function(){
+		var id = location.hash.replace('#','') || 'id_index';
+		var elem = document.getElementById(id) || document.getElementById('id_index');
+		elem.style.display = 'block';
+
+		if(document.getElementById(id) && document.getElementById(id).getAttribute('showfooter')){
+
+			document.getElementById("footer").setAttribute('class','footer footer_'+ document.getElementById(id).getAttribute('showfooter'));
+		}else{
+
+			document.getElementById("footer").setAttribute('class','footer');
+		}
+	}();
+
+
 
 	document.addEventListener('click',function(e){
 		
@@ -727,7 +809,7 @@
 		
 		var a = e.target.nodeName == 'A' ? e.target : e.target.closest('a') ? e.target.closest('a') : null;
 		
-		if(a.nodeName == 'A'){
+		if(a && a.nodeName == 'A'){
 			var newlink = a.getAttribute('href');
 			
 			//var oldlink = e.target.parentNode.getAttribute('id');
@@ -741,31 +823,17 @@
 						//console.log(item.getAttribute("id"));
 					}
 				}
-				//console.log(newlink);
 				document.getElementById(newlink).style.display = 'block';
-				var arr = newlink.split("_");
-				var type = arr[0];
-				console.log(type);
-				if(type!="lg" && type!="com"){
-					var img_url = "./images/bottom/index.png";
-					if(type=="id")
-					{
-						var img_url = "./images/bottom/index.png";
-					}else if (type=="pub"){
-						var img_url = "./images/bottom/pub.png";
-					}else if (type=="mine"){
-						var img_url = "./images/bottom/mine.png";
-					}
-					document.getElementById("footer_img").src = img_url;
-					document.getElementById("filter_hide").style.display = 'block';
-					document.getElementById("footer").style.display = 'block';
-				}else if(type=="com"){
-					document.getElementById("footer_img").src = './images/bottom/com.png';
+				location.hash = newlink;
+
+				if(document.getElementById(newlink) && document.getElementById(newlink).getAttribute('showfooter')){
+
+					document.getElementById("footer").setAttribute('class','footer footer_'+ document.getElementById(newlink).getAttribute('showfooter'));
 				}else{
-					document.getElementById("filter_hide").style.display = 'none';
-					document.getElementById("footer").style.display = 'none';
+
+					document.getElementById("footer").setAttribute('class','footer');
 				}
-			//}	
+
 			e.preventDefault();
 		}
  
