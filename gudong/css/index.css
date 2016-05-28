@@ -1,5 +1,5 @@
 
-html {position: relative;color: #000;}
+html {position: relative;color: #000;height: 100%;}
 body {min-height: 100%;background-color: #fff;font-family: sans-serif,"Helvetica Neue", Helvetica, Arial;font-size: 12px;color: #333;margin: 0;padding: 0;}
 
 a{position: absolute;background-color: #000000;opacity:0;}
@@ -35,7 +35,7 @@ h2 a img{width:80%;height:auto;vertical-align: middle;}
 .img1{display:block;width:100%;height:auto;margin:10px auto}
 .bottom{bottom:-10px!important}
 .matop{margin-top:12%;position: relative;overflow: hidden;}
-.shop_box{width:100%;height:auto;font-size: 0;display:block;overflow:hidden;overflow-x:scroll;white-space: nowrap;}
+.shop_box{width:100%;height:auto;font-size: 0;display:block;overflow:hidden;overflow-x:auto;white-space: nowrap;}
 .shop_box a{display: inline-block;position: relative;opacity: 1;background-color: transparent; vertical-align: top;width: 124.53%;font-size: 12px;}
 .shop_box img{vertical-align: top;width: 124.53%;}
 .shop_box2 img{width: 100%;}
@@ -45,7 +45,8 @@ h2 a img{width:80%;height:auto;vertical-align: middle;}
 
 
 .main{width: 100%;}
-.main>div{display:none;position: relative;height: 120%;width: 100%;overflow: hidden;}
+.main>div{display:none;width: 100%;overflow: hidden;}
+div{position: relative;}
 a.link_top_left{left:0%;top:0%;width: 15%;height: 7%;}
 a.link_top_right{right:0%;top:0%;width: 17%;padding-bottom: 12%;}
 
@@ -153,7 +154,7 @@ a.link_com_dr,a.link_com_send,a.link_com_service{width: 32%;height: 5%;}
 .com_cart   a.link_com_bankcard{position: fixed; bottom: 0; right:0;width:33%;height:11%;z-index: 1;}
 .com_bankcard  a.link_com_confirm{top:44%;width:100%;height:11%;}
 .com_confirm   a.link_com_pay{position: fixed; width:30%;height:11%;right: 0;bottom: 0;}
-.com_pay       a.link_com_pay{top: 0;left: 0;width: 100%;height: 100%;}
+.com_pay       a.link_com_pay{position: fixed;left: 0;top: 0;width: 100%;height: 100%;}
 .com_payok     a.link_com_index{top:0;width:100%;height:100%;}
 
 .com_service a.link_com_dr,.com_service a.link_com_send,.com_service a.link_com_service{top:3%;}
@@ -223,5 +224,7 @@ a.link_pub_pull_other {right: 0;}
 
 
 .link_return{top: 0;left: 0;padding-left: 12%;padding-bottom: 12%;}
+.mark{position: absolute;left: 0;top: 0;bottom: 0;right: 0;background-color: rgba(0,0,0,0.5);}
 
-
+.draw_shake{position: fixed;left: 0;top: 0;width: 100%;height: 100%;}
+.draw_shake img{width: 100%;height: 100%;}
