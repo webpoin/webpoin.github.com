@@ -43,9 +43,10 @@ h2 a img{width:80%;height:auto;vertical-align: middle;}
 .img1{display:block;width:100%;height:auto;margin:10px auto}
 .bottom{bottom:-10px!important}
 .matop{margin-top:12%;position: relative;overflow: hidden;}
-.shop_box{width:100%;height:auto;font-size: 0;display:block;overflow:hidden;overflow-x:auto;white-space: nowrap;}
+.shop_box{width:100%;height:auto; font-size: 0;display:block;overflow:hidden;overflow-x:auto;white-space: nowrap;}
 .shop_box a{display: inline-block;position: relative;opacity: 1;background-color: transparent; vertical-align: top;width: 124.53%;font-size: 12px;}
 .shop_box img{vertical-align: top;width: 124.53%;}
+.shop_box a>img{width: 100%;}
 .shop_box2 img{width: 100%;}
 .shop_box3 {position: absolute;left: 0;top: 0;width: 100%;height: 0;padding-bottom: 40.86%;background-color: #fff;}
 .shop_box3 a{position: absolute;top: 0;bottom: 0;left: 0;font-size: 0;}

@@ -287,7 +287,10 @@
 					"images/login/index.png",
 					"images/mine/bonus.png",
 					"images/public/index.png",
-					"images/community/confirm.png"
+					"images/community/confirm.png",
+					"images/public/index_4.png",
+					"images/public/index_2.png",
+					"images/public/index_3.png"
 				],
 				"refer": [],
 				"priority": 0
