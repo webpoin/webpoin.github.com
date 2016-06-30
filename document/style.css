@@ -85,7 +85,7 @@ a {text-decoration: none; font-size: 13px; color: #333333;}
 
 
 /*平板响应布局*/
-@media screen and (max-width:1355px){
+@media screen and (max-width:1300px){
 
 	.main{margin-left: 20px;margin-right: 80px;}
 	.main_aside{width: auto;float: none;}
@@ -96,7 +96,7 @@ a {text-decoration: none; font-size: 13px; color: #333333;}
 	.main_porm {clear: both;}
 	.main_aside_text {margin-left: -4px;}
 
-	.side-bar{left: auto;right:0;margin-left: 0;}
+	.side-bar{left: auto;right:15px;margin-left: 0;}
 	.footer_center h2{margin-left: 20px;}
 	.footer_center p{margin-left: 20px;}
 }
