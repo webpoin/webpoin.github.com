@@ -34,14 +34,16 @@ dd h3:before{content: '';position: absolute;left: 50%;top: 0;height: 100%;width:
 dd h3 span{float: left;width: 50%;text-align: center;font-size: 12px;}
 dd h3 em{font-size: 14px;font-style: normal;color: #E24242;}
 ul,li {list-style: none;}
+#div {position: fixed; left: 40%; top: 10%; display: none;  z-index: 3; height: 700px; cursor: pointer;}
 
 
 /*项目详情*/
 
 a {text-decoration: none; font-size: 13px; color: #333333;}
-.side-bar {position: fixed;top: 50%;left: 50%;margin-left: 600px; width: 66px; text-align: center; font-size: 0;line-height: 32px;z-index: 100;} 
-.side-bar a {width: 66px;height: 35px;display: inline-block;background-color: #ddd;margin-bottom: 2px;} 
-.side-bar a:hover {background-color: #8cbb19; color: #fff;} 
+#side_bar {position: fixed;top: 50%;left: 50%;margin-left: 600px; width: 66px; text-align: center; font-size: 0;line-height: 32px;z-index: 100;} 
+#side_bar a {width: 66px;height: 35px;display: inline-block;background-color: #ddd;margin-bottom: 2px;} 
+#side_bar a:hover {background-color: #8cbb19; color: #fff;} 
+#side_bar .active {background-color: #8cbb19; color: #fff;}
 .main_wrap {position: relative; margin: 10px 0 50px 0; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;background-color: #fff;}
 .main_tagImg {position: absolute; left: -13px; top: -39px;}
 .main_tagText {position: absolute; left: 12px; top: 30px; font-size: 18px; color: #fff;}
@@ -71,7 +73,7 @@ a {text-decoration: none; font-size: 13px; color: #333333;}
 .main_picture h3{padding: 15px 0; font-size: 16px; font-weight: normal; border-bottom: 1px solid black; }
 .main_picture ul{display: block; overflow: hidden;margin: 0;padding: 0;}
 .main_picture li{position: relative; float: left;width: 25%;padding-bottom: 40%;overflow: hidden;}
-.main_picture span{position: absolute;left: 10px;top: 10px;right: 10px;bottom: 10px;white-space:nowrap;text-align: center;}
+.main_picture span{position: absolute;left: 10px;top: 10px;right: 10px;bottom: 10px;white-space:nowrap;text-align: center; cursor: pointer;}
 .main_picture span:after{content: '';position: absolute;left: -5px;top: -5px;width: 100%;height: 100%;padding: 5px;border:1px solid #ddd;border-radius: 5px;}
 .main_picture span:before{content: '';display: inline-block;width: 0;height: 100%;vertical-align: middle;}
 .main_picture img {vertical-align: middle; max-width: 100%;max-height: 100%;}
@@ -96,11 +98,8 @@ a {text-decoration: none; font-size: 13px; color: #333333;}
 	.main_porm {clear: both;}
 	.main_aside_text {margin-left: -4px;}
 
-	.side-bar{left: auto;right:15px;margin-left: 0;}
+	#side_bar{left: auto;right:15px;margin-left: 0;}
 	.footer_center h2{margin-left: 20px;}
 	.footer_center p{margin-left: 20px;}
 }
-
-
-
 
